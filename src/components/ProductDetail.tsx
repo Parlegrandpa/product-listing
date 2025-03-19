@@ -57,7 +57,7 @@ const ProductDetail = ({ data }: ProductDetailProps) => {
       <div className="md:w-1/2 md:pl-6 mt-6 md:mt-0">
         {/* Product Title and Price */}
         <h1 className="text-2xl font-bold text-gray-800">{data.title}</h1>
-        <p className="text-xl text-gray-600 mt-2">{`£266`}</p>
+        <p className="text-xl text-gray-600 mt-2">{`£200`}</p>
 
         {/* Description */}
         <p className="text-gray-600 mt-4">{data.description}</p>

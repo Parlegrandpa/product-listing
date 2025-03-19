@@ -2,7 +2,6 @@
 
 import type { NextPage } from "next";
 import Link from "next/link";
-import Header from "@/components/Header";
 import CartItem from "@/components/CartItem";
 import { useState } from "react";
 
@@ -71,61 +70,61 @@ const Cart: NextPage = () => {
   };
 
   return (
-      <main className="max-w-4xl mx-auto p-4">
-        <h1 className="text-2xl font-bold mb-6">Shopping Cart</h1>
+    <main className="max-w-4xl mx-auto p-4">
+      <h1 className="text-2xl font-bold mb-6">Shopping Cart</h1>
 
-        {/* Cart Items */}
-        <div className="space-y-4">
-          {cartItems.map((item) => (
-            <CartItem
-              key={item.id}
-              name={item.name}
-              variant={item.variant}
-              image={item.image}
-              price={item.price}
-              quantity={item.quantity}
-              stockStatus={item.stockStatus}
-              onQuantityChange={(quantity) =>
-                handleQuantityChange(item.id, quantity)
-              }
-              onRemove={() => handleRemove(item.id)}
-            />
-          ))}
+      {/* Cart Items */}
+      <div className="space-y-4">
+        {cartItems.map((item) => (
+          <CartItem
+            key={item.id}
+            name={item.name}
+            variant={item.variant}
+            image={item.image}
+            price={item.price}
+            quantity={item.quantity}
+            stockStatus={item.stockStatus}
+            onQuantityChange={(quantity) =>
+              handleQuantityChange(item.id, quantity)
+            }
+            onRemove={() => handleRemove(item.id)}
+          />
+        ))}
+      </div>
+
+      {/* Summary Section */}
+      <div className="mt-6 p-4 bg-gray-50 rounded-lg shadow-md">
+        <div className="flex justify-between text-sm mb-2">
+          <span>Subtotal</span>
+          <span>${subtotal.toFixed(2)}</span>
         </div>
-
-        {/* Summary Section */}
-        <div className="mt-6 p-4 bg-gray-50 rounded-lg shadow-md">
-          <div className="flex justify-between text-sm mb-2">
-            <span>Subtotal</span>
-            <span>${subtotal.toFixed(2)}</span>
-          </div>
-          <div className="flex justify-between text-sm mb-2">
-            <span>Shipping</span>
-            <span>${shipping.toFixed(2)}</span>
-          </div>
-          <div className="flex justify-between text-sm mb-2">
-            <span>Tax</span>
-            <span>${tax.toFixed(2)}</span>
-          </div>
-          <div className="flex justify-between text-lg font-bold mt-4">
-            <span>Order total</span>
-            <span>${total.toFixed(2)}</span>
-          </div>
+        <div className="flex justify-between text-sm mb-2">
+          <span>Shipping</span>
+          <span>${shipping.toFixed(2)}</span>
         </div>
+        <div className="flex justify-between text-sm mb-2">
+          <span>Tax</span>
+          <span>${tax.toFixed(2)}</span>
+        </div>
+        <div className="flex justify-between text-lg font-bold mt-4">
+          <span>Order total</span>
+          <span>${total.toFixed(2)}</span>
+        </div>
+      </div>
 
-        {/* Checkout Button */}
-        <button className="w-full mt-4 bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700">
-          Checkout
-        </button>
+      {/* Checkout Button */}
+      <button className="w-full mt-4 bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700">
+        Checkout
+      </button>
 
-        {/* Continue Shopping Link */}
-        <Link
-          href="/"
-          className="block text-center text-blue-600 text-sm mt-2 hover:underline"
-        >
-          or Continue Shopping →
-        </Link>
-      </main>
+      {/* Continue Shopping Link */}
+      <Link
+        href="/"
+        className="block text-center text-blue-600 text-sm mt-2 hover:underline"
+      >
+        or Continue Shopping →
+      </Link>
+    </main>
   );
 };
 
