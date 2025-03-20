@@ -5,7 +5,7 @@ import { ProductCollection } from "@/types/types";
 import { useCart } from "@/context/CartGlobalContext";
 import Image from "next/image";
 import { useQuery } from "@tanstack/react-query";
-import { fetchProductById } from "@/lib/query";
+import { fetchProductById } from "@/data/query";
 import { useSearchParams } from "next/navigation";
 
 export interface ProductDetailProps {
