@@ -1,7 +1,7 @@
 import Medusa from "@medusajs/js-sdk";
 
 export const BACKEND_URL =
-  process.env.MEDUSA_BACKEND_URL || "http://localhost:9000";
+  process.env.MEDUSA_BACKEND_URL || "";
 
 export const medusa = new Medusa({
   baseUrl: BACKEND_URL,
