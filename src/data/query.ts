@@ -4,7 +4,8 @@ import { ProductDetailResponse, ProductsResponse } from "../types/types";
 const medusaHeader = {
   "Content-Type": "application/json",
   "x-publishable-api-key":
-    "pk_432df76dcfb6cfdb8c4735c148d9f9255378bef46147596970dac699a0b9afc5",
+    process.env.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY ||
+    "",
 };
 
 const url = `${BACKEND_URL}/store/products`;

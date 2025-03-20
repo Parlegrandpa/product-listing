@@ -1,2 +1,2 @@
 export const BACKEND_URL =
-  "https://my-medusa-backend-production-8611.up.railway.app";
+  process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL || "http://localhost:9000";
