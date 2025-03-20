@@ -1,4 +1,3 @@
-import { BACKEND_URL } from "@/lib/medusa";
 import { ProductDetailResponse, ProductsResponse } from "../types/types";
 
 const medusaHeader = {
@@ -8,7 +7,13 @@ const medusaHeader = {
     "",
 };
 
-const url = `${BACKEND_URL}/store/products`;
+let MEDUSA_BACKEND_URL = "http://localhost:9000"
+
+if (process.env.MEDUSA_BACKEND_URL) {
+  MEDUSA_BACKEND_URL = process.env.MEDUSA_BACKEND_URL
+}
+
+const url = `${MEDUSA_BACKEND_URL}/store/products`;
 
 export const fetchProducts = async (): Promise<ProductsResponse> => {
   const response = await fetch(url, {
